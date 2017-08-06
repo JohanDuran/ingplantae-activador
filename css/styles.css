@@ -1,0 +1,71 @@
+/*Estilos del menu*/
+nav{
+    background-color: #08605f!important;
+}
+
+/*footer{
+    background-color: #08605f!important;
+}
+
+footer a:hover{
+    color: white;
+    text-decoration: none!important;
+}*/
+.navbar-fixed { z-index: 9999; }
+
+
+nav a:hover{
+    color: white;  
+    text-decoration: none!important;
+}
+
+
+nav li:hover{
+    background-color: #6a0126;  
+}
+
+.brand-logo{
+    margin-left: 10px;
+}
+
+.brand-logo img{
+    height: 100%;
+    width: 200px;
+}
+
+/*Estilo de la imagen de home*/
+/*Imagen de la pantalla home*/
+#backgroundimage
+{
+    height: auto;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+/*Estilo para el contenedor principal*/
+.main-container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.fontSizeNav a{
+    font-size: medium!important;
+}
+
+
+/*Estilos para los graficos*/
+/*Temperatura*/
+.highcharts-yaxis-grid .highcharts-grid-line {
+	display: none;
+}
+
+.chart{
+    width: 50%;
+    height: 500px;
+}
+
+/*PARA ENVIAR*/
