@@ -55,7 +55,7 @@ $( document ).ready(function(){
         }
     };
     
-    // The speed gauge
+    // The temperature gauge
     var temperatureChart = Highcharts.chart('container-temperatura', Highcharts.merge(gaugeOptions, {
         yAxis: {
             min: 0,
@@ -84,12 +84,107 @@ $( document ).ready(function(){
     
     }));
     
+    // The relativa gauge
+    var relativaChart = Highcharts.chart('container-relativa', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 50,
+            title: {
+                text: 'Húmedad relativa'
+            }
+        },
     
-    //Conexión a la BD
+        credits: {
+            enabled: false
+        },
+    
+        series: [{
+            name: 'relativa',
+            data: [0],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver">%</span></div>'
+            },
+            tooltip: {
+                valueSuffix: '%'
+            }
+        }]
+    
+    }));
+
+    // The relativa gauge
+    var radiacionChart = Highcharts.chart('container-radiacion', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 50,
+            title: {
+                text: 'Radiación'
+            }
+        },
+    
+        credits: {
+            enabled: false
+        },
+    
+        series: [{
+            name: 'radiacion',
+            data: [0],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver">1 m2 mol</span></div>'
+            },
+            tooltip: {
+                valueSuffix: '1 m2 mol'
+            }
+        }]
+    
+    }));
+    
+    // The humedad suelo gauge
+    var sueloChart = Highcharts.chart('container-suelo', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 50,
+            title: {
+                text: 'Húmedad suelo'
+            }
+        },
+    
+        credits: {
+            enabled: false
+        },
+    
+        series: [{
+            name: 'suelo',
+            data: [0],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver">%</span></div>'
+            },
+            tooltip: {
+                valueSuffix:'%'
+            }
+        }]
+    
+    }));    
+    
+    
+    
+    //Conexión a la BD, se instancia acá porque depende de la carga del chart
     var ref = firebase.database().ref('/datos');
     ref.on('child_added', function(snapshot) {
-        point = temperatureChart.series[0].points[0];
-        point.update(snapshot.val().sensors_values.temperatura);
+        pointTemp = temperatureChart.series[0].points[0];
+        pointRel = relativaChart.series[0].points[0];
+        pointRad = radiacionChart.series[0].points[0];
+        pointSuelo = sueloChart.series[0].points[0];
+
+        pointTemp.update(snapshot.val().sensors_values.temperatura);
+        pointRel.update(snapshot.val().sensors_values.humedad_relativa);
+        pointRad.update(snapshot.val().sensors_values.luz);
+        pointSuelo.update(snapshot.val().sensors_values.humedad_suelo);
     });
     
 });

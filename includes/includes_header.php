@@ -9,6 +9,12 @@
 <!------------------------- GOOGLE ICONS ------------------------------------->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<!------------------------- BOOTSTRAP ------------------------------------->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 
 <!------------------------- MATERIALIZE ------------------------------------->
 <!-- Compiled and minified CSS -->
@@ -18,9 +24,4 @@
 <link rel="stylesheet" href="css/styles.css"><!--Debe estar luego de materialize para que no se vea gris el menu cel-->
 <link rel="stylesheet" href="css/footer.css">
 
-<!------------------------- BOOTSTRAP ------------------------------------->
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">

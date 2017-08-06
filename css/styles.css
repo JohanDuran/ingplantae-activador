@@ -1,16 +1,13 @@
-/*Estilos del menu*/
+
+/*Cambios en los estilos del menu*/
 nav{
     background-color: #08605f!important;
 }
 
-/*footer{
-    background-color: #08605f!important;
-}
-
-footer a:hover{
-    color: white;
-    text-decoration: none!important;
+/*.active{
+    background-color: #6a0126!important;
 }*/
+
 .navbar-fixed { z-index: 9999; }
 
 
@@ -24,6 +21,8 @@ nav li:hover{
     background-color: #6a0126;  
 }
 
+
+/*Estilo para el logo de la página*/
 .brand-logo{
     margin-left: 10px;
 }
@@ -48,10 +47,11 @@ nav li:hover{
 
 /*Estilo para el contenedor principal*/
 .main-container{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    min-height: 700px;
 }
 
+
+/*Cambio de tamaño de texto para navbar*/
 .fontSizeNav a{
     font-size: medium!important;
 }
@@ -63,6 +63,7 @@ nav li:hover{
 	display: none;
 }
 
+/*Estilo de los graficos, el frame debe ser aproximadamente el doble que el interno*/
 .chart-frame{
     width: 100%;
     height: 400px;
@@ -76,3 +77,29 @@ nav li:hover{
 
 }
 
+/*Remove text decoration allwhere*/
+a{
+    text-decoration: none;
+}
+
+
+/*Fab button*/
+.btn-small{
+    margin-bottom: 10px!important;
+    background-color: #08605f;
+}
+
+@media only screen and (max-width: 768px) {
+.chart-frame{
+    width: 100%;
+    height: 400px;
+    margin: 0 ;
+}
+
+.chart{
+    width: 100%; 
+    height: 50%; 
+    float: right;
+
+}  
+}

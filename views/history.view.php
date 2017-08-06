@@ -11,6 +11,7 @@
 
 	<div class="container-fluid main-container">
 	<!--Content goes here-->
+	<h3 class="center">Sección en desarrollo</h3>
 	</div>
 	<?php require 'includes/footer.php'?>
 	<?php require 'includes/includes_js.php'; ?>

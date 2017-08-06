@@ -13,7 +13,10 @@
 	<!--Content goes here-->
 	<div class="chart-frame">
         <div id="container-temperatura" class="chart"></div>
-    </div>
+        <div id="container-relativa" class="chart"></div>
+        <div id="container-radiacion" class="chart"></div>
+        <div id="container-suelo" class="chart"></div>
+    </div>    
 	</div>
 	<?php require 'includes/footer.php'?>
 	<?php require 'includes/includes_js.php'; ?>
