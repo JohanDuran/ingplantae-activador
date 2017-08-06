@@ -10,6 +10,8 @@ $( document ).ready(function(){
         title: null,
     
         pane: {
+            center: ['50%', '85%'],
+            size: '140%',
             startAngle: -90,
             endAngle: 90,
             background: {
@@ -81,8 +83,15 @@ $( document ).ready(function(){
         }]
     
     }));
+    
+    
+    //Conexión a la BD
+    var ref = firebase.database().ref('/datos');
+    ref.on('child_added', function(snapshot) {
         point = temperatureChart.series[0].points[0];
-        point.update(12);
+        point.update(snapshot.val().sensors_values.temperatura);
+    });
+    
 });
 
 

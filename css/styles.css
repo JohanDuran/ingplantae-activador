@@ -63,9 +63,16 @@ nav li:hover{
 	display: none;
 }
 
-.chart{
-    width: 50%;
-    height: 500px;
+.chart-frame{
+    width: 100%;
+    height: 400px;
+    margin: 0 ;
 }
 
-/*PARA ENVIAR*/
+.chart{
+    width: 50%; 
+    height: 50%; 
+    float: left;
+
+}
+
